@@ -128,7 +128,7 @@ export default function Index() {
         <div className="container mx-auto px-4 relative">
           <div className="max-w-3xl mx-auto text-center animate-fade-in">
             <Badge className="mb-4 bg-accent text-white border-0">Новинки 2026</Badge>
-            <h2 className="font-heading text-4xl md:text-6xl font-bold mb-6">
+            <h2 className="font-heading text-4xl md:text-6xl font-bold mb-6 text-purple-400">
               Волшебные подарки для незабываемого Нового года
             </h2>
             <p className="text-lg md:text-xl mb-8 text-white/90">
