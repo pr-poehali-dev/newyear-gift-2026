@@ -95,21 +95,21 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-primary/5 to-background">
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto flex h-16 items-center justify-between px-4">
-          <div className="flex items-center gap-2">
-            <Icon name="Gift" className="h-6 w-6 text-secondary" />
-            <h1 className="font-heading text-xl font-bold">Новогодние Подарки 2026</h1>
+    <div className="min-h-screen bg-background">
+      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-white/80 backdrop-blur-xl supports-[backdrop-filter]:bg-white/80 shadow-sm">
+        <div className="container mx-auto flex h-20 items-center justify-between px-6">
+          <div className="flex items-center gap-3">
+            <Icon name="Gift" className="h-7 w-7 text-secondary" />
+            <h1 className="font-heading text-2xl font-bold tracking-tight">Новогодние Подарки 2026</h1>
           </div>
-          <nav className="hidden md:flex items-center gap-6">
-            <a href="#catalog" className="text-sm font-medium hover:text-secondary transition-colors">Каталог</a>
-            <a href="#about" className="text-sm font-medium hover:text-secondary transition-colors">О нас</a>
-            <a href="#delivery" className="text-sm font-medium hover:text-secondary transition-colors">Доставка</a>
-            <a href="#promotions" className="text-sm font-medium hover:text-secondary transition-colors">Акции</a>
-            <a href="#contacts" className="text-sm font-medium hover:text-secondary transition-colors">Контакты</a>
+          <nav className="hidden md:flex items-center gap-8">
+            <a href="#catalog" className="text-sm font-medium hover:text-secondary transition-colors tracking-wide">Каталог</a>
+            <a href="#about" className="text-sm font-medium hover:text-secondary transition-colors tracking-wide">О нас</a>
+            <a href="#delivery" className="text-sm font-medium hover:text-secondary transition-colors tracking-wide">Доставка</a>
+            <a href="#promotions" className="text-sm font-medium hover:text-secondary transition-colors tracking-wide">Акции</a>
+            <a href="#contacts" className="text-sm font-medium hover:text-secondary transition-colors tracking-wide">Контакты</a>
           </nav>
-          <Button className="bg-secondary hover:bg-secondary/90">
+          <Button className="bg-secondary hover:bg-secondary/90 shadow-lg hover:shadow-xl transition-all">
             <Icon name="Phone" className="mr-2 h-4 w-4" />
             Заказать звонок
           </Button>
@@ -127,11 +127,11 @@ export default function Index() {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjgiLz48L3N2Zz4=')] opacity-60 animate-pulse"></div>
         <div className="container mx-auto px-4 relative">
           <div className="max-w-3xl mx-auto text-center animate-fade-in">
-            <Badge className="mb-4 bg-accent text-white border-0">Новинки 2026</Badge>
-            <h2 className="font-heading text-4xl md:text-6xl font-bold mb-6 text-purple-400">
+            <Badge className="mb-6 bg-accent/90 text-foreground border-0 px-4 py-2 text-sm font-semibold tracking-wide uppercase shadow-lg">Новинки 2026</Badge>
+            <h2 className="font-heading text-5xl md:text-7xl font-bold mb-8 text-purple-300 drop-shadow-2xl leading-tight">
               Волшебные подарки для незабываемого Нового года
             </h2>
-            <p className="text-lg md:text-xl mb-8 text-white/90">
+            <p className="text-xl md:text-2xl mb-10 text-white/95 font-light leading-relaxed max-w-2xl mx-auto">
               Эксклюзивные наборы премиум-класса с индивидуальным подходом к каждому клиенту
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -148,16 +148,16 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="promotions" className="py-16 bg-muted/30">
+      <section id="promotions" className="py-24 bg-gradient-to-b from-muted/20 to-background">
         <div className="container mx-auto px-4">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-12">Специальные предложения</h2>
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight">Специальные предложения</h2>
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {PROMOTIONS.map((promo, index) => (
-              <Card key={promo.id} className="border-2 hover:border-secondary transition-colors animate-scale-in" style={{ animationDelay: `${index * 100}ms` }}>
-                <CardHeader>
-                  <Badge className="w-fit mb-2 bg-secondary">{promo.badge}</Badge>
-                  <CardTitle className="font-heading">{promo.title}</CardTitle>
-                  <CardDescription>{promo.description}</CardDescription>
+              <Card key={promo.id} className="border border-border/50 hover:border-secondary hover:shadow-2xl transition-all duration-300 animate-scale-in bg-white" style={{ animationDelay: `${index * 100}ms` }}>
+                <CardHeader className="space-y-3">
+                  <Badge className="w-fit bg-secondary/10 text-secondary border border-secondary/20 font-semibold tracking-wide">{promo.badge}</Badge>
+                  <CardTitle className="font-heading text-2xl">{promo.title}</CardTitle>
+                  <CardDescription className="text-base">{promo.description}</CardDescription>
                 </CardHeader>
               </Card>
             ))}
@@ -165,9 +165,9 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="catalog" className="py-16">
+      <section id="catalog" className="py-24">
         <div className="container mx-auto px-4">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-12">Каталог подарков</h2>
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight">Каталог подарков</h2>
           
           <div className="flex flex-wrap justify-center gap-3 mb-8">
             {GIFT_CATEGORIES.map((category) => (
@@ -182,34 +182,36 @@ export default function Index() {
             ))}
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredGifts.map((gift, index) => (
-              <Card key={gift.id} className="overflow-hidden hover:shadow-xl transition-all duration-300 animate-fade-in group" style={{ animationDelay: `${index * 100}ms` }}>
+              <Card key={gift.id} className="overflow-hidden hover:shadow-2xl transition-all duration-300 animate-fade-in group border border-border/50 bg-white" style={{ animationDelay: `${index * 100}ms` }}>
                 <div className="relative overflow-hidden">
                   <img 
                     src={gift.image} 
                     alt={gift.name}
-                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   {gift.discount > 0 && (
-                    <Badge className="absolute top-3 right-3 bg-secondary">-{gift.discount}%</Badge>
+                    <Badge className="absolute top-4 right-4 bg-secondary text-white border-0 shadow-lg text-base px-3 py-1">-{gift.discount}%</Badge>
                   )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
-                <CardHeader>
-                  <CardTitle className="font-heading">{gift.name}</CardTitle>
-                  <CardDescription>{gift.description}</CardDescription>
+                <CardHeader className="space-y-2">
+                  <Badge className="w-fit text-xs font-semibold tracking-wide" variant="outline">{gift.category}</Badge>
+                  <CardTitle className="font-heading text-2xl tracking-tight">{gift.name}</CardTitle>
+                  <CardDescription className="text-base leading-relaxed">{gift.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="flex items-baseline gap-2">
+                  <div className="flex items-baseline gap-3">
                     {gift.discount > 0 ? (
                       <>
-                        <span className="text-2xl font-bold text-secondary">
+                        <span className="text-3xl font-bold text-secondary">
                           {Math.round(gift.price * (1 - gift.discount / 100))} ₽
                         </span>
-                        <span className="text-muted-foreground line-through">{gift.price} ₽</span>
+                        <span className="text-muted-foreground line-through text-base">{gift.price} ₽</span>
                       </>
                     ) : (
-                      <span className="text-2xl font-bold">{gift.price} ₽</span>
+                      <span className="text-3xl font-bold">{gift.price} ₽</span>
                     )}
                   </div>
                 </CardContent>
@@ -219,8 +221,8 @@ export default function Index() {
                     if (open) setSelectedGift(gift);
                   }}>
                     <DialogTrigger asChild>
-                      <Button className="w-full bg-secondary hover:bg-secondary/90" onClick={() => setSelectedGift(gift)}>
-                        <Icon name="ShoppingBag" className="mr-2 h-4 w-4" />
+                      <Button className="w-full bg-secondary hover:bg-secondary/90 shadow-lg hover:shadow-xl transition-all text-base py-6" onClick={() => setSelectedGift(gift)}>
+                        <Icon name="ShoppingBag" className="mr-2 h-5 w-5" />
                         Оформить заказ
                       </Button>
                     </DialogTrigger>
